@@ -30,6 +30,8 @@ public class Projectile : MonoBehaviour
     {
         projectileObject.SetActive(true);
         detonationObject.SetActive(false);
+
+        detonationTime = detonationLifeTime;
     }
 
     public virtual void Update()
@@ -37,10 +39,10 @@ public class Projectile : MonoBehaviour
         if(detonationTime > 0)
         {
             detonationTime -= Time.deltaTime;
-            Debug.Log(detonationTime);
         }
-        if (detonationTime < 0)
+        if (detonationTime <= 0)
         {
+            gameObject.SetActive(false);
             Destroy(gameObject);
         }
     }

@@ -38,7 +38,6 @@ public class WeaponHandler : MonoBehaviour
             {
                 currentWeaponIndex = (int)WeaponState.total - 1;
             }
-            Debug.Log(currentWeaponIndex);
             WeaponSwapAnimation(currentWeaponIndex);
         }
     }
