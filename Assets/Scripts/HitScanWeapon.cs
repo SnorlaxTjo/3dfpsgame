@@ -21,8 +21,16 @@ public class HitScanWeapon : Weapon
 
         if (Physics.Raycast(weaponRay, out hit, weaponRange, weaponRayMask))
         {
-            hitParticle.transform.position = hit.point;
             hitParticle.Play();
+            hitParticle.transform.SetParent(null);
+            hitParticle.transform.position = hit.point;
+
+            HandleEntityHit(hit);
         }
+    }
+
+    private static void HandleEntityHit(RaycastHit hit)
+    {
+
     }
 }

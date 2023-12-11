@@ -12,7 +12,7 @@ public class Rocket : Projectile
     public override void Update()
     {
         base.Update();
-        if (base.detonationTime < 0)
+        if (base.detonationTime < 0 || base.hasExploded)
         {
             return;
         }

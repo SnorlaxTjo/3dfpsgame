@@ -242,9 +242,9 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -5307,7 +5307,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   weaponRange: 0
-  spawnProjectile: {fileID: 0}
+  spawnProjectile: {fileID: 5355071962662227897, guid: 2cecbaaf8fe92d64ca15decd9c3fcf46, type: 3}
 --- !u!4 &2385280900632872826 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 461f0170c82b53340a9812199b63bbd4, type: 3}

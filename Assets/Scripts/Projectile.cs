@@ -8,7 +8,9 @@ public class Projectile : MonoBehaviour
     [SerializeField] GameObject detonationObject;
 
     [SerializeField] float detonationLifeTime;
+    [SerializeField] float timeWithoutCollider;
     protected float detonationTime;
+    protected bool hasExploded;
 
     protected Vector3 spawnPosition;
     protected Vector3 aimPosition;
@@ -36,6 +38,14 @@ public class Projectile : MonoBehaviour
 
     public virtual void Update()
     {
+        if(detonationTime >= detonationLifeTime - timeWithoutCollider)
+        {
+            projectileObject.GetComponent<Collider>().enabled = false;
+        }
+        else
+        {
+            projectileObject.GetComponent<Collider>().enabled = true;
+        }
         if(detonationTime > 0)
         {
             detonationTime -= Time.deltaTime;
@@ -51,6 +61,8 @@ public class Projectile : MonoBehaviour
     {
         if(other.gameObject.tag != "Player")
         {
+            hasExploded = true;
+            detonationTime = 1;
             projectileObject.SetActive(false);
             detonationObject.SetActive(true);
         }
