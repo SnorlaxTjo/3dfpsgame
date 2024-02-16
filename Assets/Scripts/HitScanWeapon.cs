@@ -17,7 +17,7 @@ public class HitScanWeapon : Weapon
     public void HitScanFire()
     {
         Ray weaponRay = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
-        RaycastHit hit = new RaycastHit();
+        RaycastHit hit = new();
 
         if (Physics.Raycast(weaponRay, out hit, weaponRange, weaponRayMask))
         {
@@ -31,6 +31,6 @@ public class HitScanWeapon : Weapon
 
     private static void HandleEntityHit(RaycastHit hit)
     {
-
+        
     }
 }

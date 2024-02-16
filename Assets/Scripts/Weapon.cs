@@ -17,6 +17,7 @@ public class Weapon : MonoBehaviour
         else
         {
             ammunition--;
+            PlayerUIManager.GlobalPlayerData.ammo = ammunition;
             return true;
         }
     }

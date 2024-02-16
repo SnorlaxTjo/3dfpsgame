@@ -11,7 +11,7 @@ public enum WeaponState
     total
 }
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : Agent
 {
     [SerializeField] float speed;
     [SerializeField] float gravity;
@@ -54,5 +54,10 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    public override void OnCollisionEnter(Collision collision)
+    {
+        base.OnCollisionEnter(collision);
     }
 }

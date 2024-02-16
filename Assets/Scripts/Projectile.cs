@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] Weapon creator;
+
     [SerializeField] GameObject projectileObject;
     [SerializeField] GameObject detonationObject;
 
@@ -59,12 +61,19 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        var hitAgent = other.gameObject.GetComponent<Agent>();
+        if (hitAgent != null)
+        {
+            //DU SKA TA SKADA!!!!
+        }
+
         if(other.gameObject.tag != "Player")
         {
             hasExploded = true;
             detonationTime = 1;
             projectileObject.SetActive(false);
             detonationObject.SetActive(true);
+            PlayerUIManager.GlobalPlayerData.lastObjectHit = other.gameObject.name;
         }
     }
 }

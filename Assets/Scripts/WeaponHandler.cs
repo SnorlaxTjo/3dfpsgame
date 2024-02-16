@@ -49,6 +49,7 @@ public class WeaponHandler : MonoBehaviour
         currentWeapon = allHeldWeapons[currentWeaponIndex];
         currentWeapon.gameObject.SetActive(true);
         mouseAxisDelta = 0;
+        PlayerUIManager.GlobalPlayerData.ammo = currentWeapon.ammunition;
     }
 
     public void FireHeldWeapon()
