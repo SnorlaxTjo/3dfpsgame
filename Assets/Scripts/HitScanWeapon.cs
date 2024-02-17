@@ -29,8 +29,11 @@ public class HitScanWeapon : Weapon
         }
     }
 
-    private static void HandleEntityHit(RaycastHit hit)
+    private void HandleEntityHit(RaycastHit hit)
     {
-        
+        if (hit.collider.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
+        {
+            enemy.Damage(new WeaponHitInfo(damage));
+        }
     }
 }

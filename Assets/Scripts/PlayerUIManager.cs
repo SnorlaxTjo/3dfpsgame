@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerUIManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI lastObjectHitText;
     [SerializeField] TextMeshProUGUI ammoText;
     [SerializeField] PlayerDataExmaple playerData;
 
@@ -18,7 +17,6 @@ public class PlayerUIManager : MonoBehaviour
 
     private void Update()
     {
-        lastObjectHitText.text = "Last Object Hit: " + GlobalPlayerData.lastObjectHit;
         ammoText.text = "Ammo: " + GlobalPlayerData.ammo;
     }
 }

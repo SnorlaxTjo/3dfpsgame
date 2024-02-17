@@ -61,13 +61,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        var hitAgent = other.gameObject.GetComponent<Agent>();
-        if (hitAgent != null)
-        {
-            //DU SKA TA SKADA!!!!
-        }
-
-        if(other.gameObject.tag != "Player")
+        if (other.gameObject.tag != "Player")
         {
             hasExploded = true;
             detonationTime = 1;
